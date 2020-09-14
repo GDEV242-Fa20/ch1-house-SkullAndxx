@@ -11,22 +11,27 @@
  */
 public class Picture
 {
-    private Square wall;
-    private Square window;
-    private Triangle roof;
+    private Square sky;
+    private Square ground;
+    //private Triangle roof;
+    private Person person1;
+    private Person kid1;
     private Circle sun;
     private boolean drawn;
+    private boolean walkedAway;
 
     /**
      * Constructor for objects of class Picture
      */
     public Picture()
     {
-        wall = new Square();
-        window = new Square();
-        roof = new Triangle();  
+        sky = new Square();
+        ground = new Square();
+        person1 = new Person(); 
+        kid1 = new Person();
         sun = new Circle();
         drawn = false;
+        walkedAway = false;
     }
 
     /**
@@ -35,28 +40,37 @@ public class Picture
     public void draw()
     {
         if(!drawn) {
-            wall.moveHorizontal(-140);
-            wall.moveVertical(20);
-            wall.changeSize(120);
-            wall.changeColor("blue");
-            wall.makeVisible();
+            sky.moveHorizontal(-500);
+            sky.moveVertical(-150);
+            sky.changeSize(1000);
+            sky.changeColor("blue");
+            sky.makeVisible();
             
-            window.changeColor("black");
-            window.moveHorizontal(-120);
-            window.moveVertical(40);
-            window.changeSize(40);
-            window.makeVisible();
-    
-            roof.changeSize(60, 180);
-            roof.moveHorizontal(20);
-            roof.moveVertical(-60);
-            roof.makeVisible();
-    
             sun.changeColor("yellow");
-            sun.moveHorizontal(100);
-            sun.moveVertical(-40);
-            sun.changeSize(80);
-            sun.makeVisible();
+            sun.moveHorizontal(-100);
+            sun.moveVertical(-60);
+            sun.changeSize(250);
+            sun.makeVisible();            
+            
+            ground.changeColor("brown");
+            ground.moveHorizontal(-500);
+            ground.moveVertical(30);
+            ground.changeSize(1000);
+            ground.makeVisible();
+    
+            person1.changeSize(100, 40);
+            person1.moveHorizontal(-60);
+            person1.moveVertical(100);
+            person1.makeVisible();
+            person1.slowMoveVertical(-155);
+    
+            kid1.changeSize(50, 20);
+            kid1.moveHorizontal(0);
+            kid1.moveVertical(100);
+            kid1.makeVisible();
+            kid1.slowMoveVertical(-120);
+                
+
             drawn = true;
         }
     }
@@ -66,10 +80,12 @@ public class Picture
      */
     public void setBlackAndWhite()
     {
-        wall.changeColor("black");
-        window.changeColor("white");
-        roof.changeColor("black");
-        sun.changeColor("black");
+        sky.changeColor("black");
+        sun.changeColor("white");
+        ground.changeColor("white");
+        person1.changeColor("black");
+        kid1.changeColor("black");
+
     }
 
     /**
@@ -77,9 +93,34 @@ public class Picture
      */
     public void setColor()
     {
-        wall.changeColor("red");
-        window.changeColor("black");
-        roof.changeColor("green");
+        sky.changeColor("blue");
         sun.changeColor("yellow");
+        ground.changeColor("brown");
+        person1.changeColor("black");
+        kid1.changeColor("black");
+
+    }
+    
+    /**
+     * Adult and kid walk towards camera
+     */
+    public void walkForward()
+    {
+        if(!walkedAway){
+        person1.slowMoveVertical(200);
+        kid1.slowMoveVertical(150);
+        walkedAway = true;
+    }
+    }
+    /**
+     * Adult and kid sunset walk
+     */
+    public void sunsetWalk()
+    {
+        if(walkedAway == true){
+        person1.slowMoveVertical(-200);
+        kid1.slowMoveVertical(-150);
+        walkedAway = false;
+    }
     }
 }
