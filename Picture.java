@@ -9,10 +9,15 @@ public class Picture
 {
     private Square sky;
     private Square ground;
-    //private Triangle roof;
+    private Triangle rock1;
+    private Triangle rock2;
+    private Triangle rock3;
+    private Triangle rock4;
     private Person person1;
     private Person kid1;
     private Circle sun;
+    // private Circle gliderBottom;
+    // private Square gliderTop;
     private boolean drawn;
     private boolean walkedAway;
     //private boolean sunSetted;
@@ -27,6 +32,12 @@ public class Picture
         person1 = new Person(); 
         kid1 = new Person();
         sun = new Circle();
+        rock1 = new Triangle();
+        rock2 = new Triangle();
+        rock3 = new Triangle();
+        rock4 = new Triangle();
+        // gliderBottom = new Circle();
+        // gliderTop = new Square();
         drawn = false;
         walkedAway = false;
         //sunSetted = false;
@@ -56,12 +67,36 @@ public class Picture
             ground.changeSize(1000);
             ground.makeVisible();
     
+            rock1.changeColor("lightBrown");
+            rock1.changeSize(-10,10);
+            rock1.moveHorizontal(-100);
+            rock1.moveVertical(100);
+            rock1.makeVisible();
+
+            rock2.changeColor("lightBrown");
+            rock2.changeSize(-10,10);
+            rock2.moveHorizontal(-90);
+            rock2.moveVertical(90);
+            rock2.makeVisible();
+            
+            rock3.changeColor("lightBrown");
+            rock3.changeSize(25,20);
+            rock3.moveHorizontal(200);
+            rock3.moveVertical(70);
+            rock3.makeVisible();
+            
+            rock4.changeColor("lightBrown");
+            rock4.changeSize(15,20);
+            rock4.moveHorizontal(150);
+            rock4.moveVertical(100);
+            rock4.makeVisible();
+            
             person1.changeSize(100, 40);
             person1.moveHorizontal(-60);
             person1.moveVertical(100);
             person1.makeVisible();
             person1.slowMoveVertical(-155);
-    
+            
             kid1.changeColor("green");
             kid1.changeSize(50, 20);
             kid1.moveHorizontal(0);
@@ -82,6 +117,10 @@ public class Picture
         sky.changeColor("black");
         sun.changeColor("white");
         ground.changeColor("grey");
+        rock1.changeColor("black");
+        rock2.changeColor("black");
+        rock3.changeColor("black");
+        rock4.changeColor("black");
         person1.changeColor("black");
         kid1.changeColor("black");
 
@@ -95,6 +134,10 @@ public class Picture
         sky.changeColor("blue");
         sun.changeColor("yellow");
         ground.changeColor("brown");
+        rock1.changeColor("lightBrown");
+        rock2.changeColor("lightBrown");
+        rock3.changeColor("lightBrown");
+        rock4.changeColor("lightBrown");
         person1.changeColor("black");
         kid1.changeColor("green");
 
