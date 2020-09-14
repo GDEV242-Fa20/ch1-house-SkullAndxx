@@ -19,6 +19,7 @@ public class Picture
     private Circle sun;
     private boolean drawn;
     private boolean walkedAway;
+    //private boolean sunSetted;
 
     /**
      * Constructor for objects of class Picture
@@ -32,6 +33,7 @@ public class Picture
         sun = new Circle();
         drawn = false;
         walkedAway = false;
+        //sunSetted = false;
     }
 
     /**
@@ -123,4 +125,24 @@ public class Picture
         walkedAway = false;
     }
     }
+    // /**
+     // * Sunset
+     // */
+    // public void sunset()
+    // {
+        // if(!sunSetted){
+        // sun.slowMoveVertical(300);
+        // walkedAway = true;
+    // }
+    // }
+    // /**
+     // * Adult and kid sunset walk
+     // */
+    // public void sunrise()
+    // {
+        // if(sunSetted == true){
+        // sun.slowMoveVertical(-300);
+        // walkedAway = false;
+    // }
+    // }
 }
