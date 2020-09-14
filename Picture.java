@@ -62,6 +62,7 @@ public class Picture
             person1.makeVisible();
             person1.slowMoveVertical(-155);
     
+            kid1.changeColor("green");
             kid1.changeSize(50, 20);
             kid1.moveHorizontal(0);
             kid1.moveVertical(100);
@@ -80,7 +81,7 @@ public class Picture
     {
         sky.changeColor("black");
         sun.changeColor("white");
-        ground.changeColor("white");
+        ground.changeColor("grey");
         person1.changeColor("black");
         kid1.changeColor("black");
 
@@ -95,7 +96,7 @@ public class Picture
         sun.changeColor("yellow");
         ground.changeColor("brown");
         person1.changeColor("black");
-        kid1.changeColor("black");
+        kid1.changeColor("green");
 
     }
     
