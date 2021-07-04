@@ -4,10 +4,15 @@ import java.util.List;
 import java.util.*;
 
 /**
+ * Note: Added grey, brown, light blue and light brown to color area.
+ * @author: Erick Rubio
+ * @version 2020.14.20
+ * 
  * Canvas is a class to allow for simple graphical drawing on a canvas.
  * This is a modification of the general purpose Canvas, specially made for
  * the BlueJ "shapes" example. 
  *
+ * 
  * @author: Bruce Quig
  * @author: Michael Kšlling (mik)
  *
@@ -129,7 +134,7 @@ public class Canvas
             graphic.setColor(Color.black);
         }
         else if(colorString.equals("blue")) {
-            graphic.setColor(new Color(30, 75, 220));
+            graphic.setColor(new Color(51, 204, 255));
         }
         else if(colorString.equals("yellow")) {
             graphic.setColor(new Color(255, 230, 0));
@@ -143,6 +148,15 @@ public class Canvas
         else if(colorString.equals("white")) {
             graphic.setColor(Color.white);
         }
+        else if(colorString.equals("brown")) {
+            graphic.setColor(new Color(165, 42, 42));
+        }
+        else if(colorString.equals("lightBrown")) {
+            graphic.setColor(new Color(188, 143, 143));
+        }
+    	else if(colorString.equals("grey")) {
+    	    graphic.setColor(new Color(128, 128, 128));
+	}
         else {
             graphic.setColor(Color.black);
         }
